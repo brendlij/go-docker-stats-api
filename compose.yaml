@@ -1,11 +1,10 @@
-version: "3.8"
 services:
   docker-status:
     build: .
     container_name: docker-status-api
     restart: unless-stopped
     ports:
-      - "8080:8080"
+      - "8682:8682"
     volumes:
       # CRITICAL: Mount the host docker socket so the API can see other containers.
       # :ro ensures read-only access for security.
