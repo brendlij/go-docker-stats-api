@@ -7,7 +7,7 @@ services:
       dockerfile: Dockerfile
     container_name: docker-status-api
     ports:
-      - "8911:8080"
+      - "8911:8911"
     volumes:
       # Mount Docker socket to allow the container to access Docker daemon
       - /var/run/docker.sock:/var/run/docker.sock:ro

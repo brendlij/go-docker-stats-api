@@ -24,6 +24,6 @@ WORKDIR /root/
 # Copy the binary from builder
 COPY --from=builder /app/docker-status-api .
 
-EXPOSE 8080
+EXPOSE 8911
 
 CMD ["./docker-status-api"]
