@@ -1,0 +1,18 @@
+version: "3.8"
+services:
+  docker-status:
+    build: .
+    container_name: docker-status-api
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    volumes:
+      # CRITICAL: Mount the host docker socket so the API can see other containers.
+      # :ro ensures read-only access for security.
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    networks:
+      - default
+
+networks:
+  default:
+    name: dockge-network
