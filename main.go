@@ -42,8 +42,8 @@ func main() {
 	http.HandleFunc("/api/containers/", handleContainerDetail)
 	http.HandleFunc("/health", handleHealth)
 
-	log.Println("Starting Docker Status API on :8911")
-	log.Fatal(http.ListenAndServe(":8911", nil))
+	log.Println("Starting Docker Status API on :8080")
+	log.Fatal(http.ListenAndServe(":8080", nil))
 }
 
 // handleHealth returns a simple health check endpoint
